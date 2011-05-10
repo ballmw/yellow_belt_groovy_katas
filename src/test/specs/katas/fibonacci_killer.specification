@@ -22,5 +22,21 @@ it "should return 2 for 3", {
 
 it "should return 3 for 4", {
 	fibonnacci.fibonnacci(4).shouldBe(3);
-  }
+}
+
+it "should return 5 for 5", {
+	fibonnacci.fibonnacci(5).shouldBe(5);
+}
+
+it "should return 8 for 6", {
+	fibonnacci.fibonnacci(6).shouldBe(8);
+}
+
+it "should return 13 for 7", {
+	fibonnacci.fibonnacci(7).shouldBe(13);
+}
+
+it "should return 21 for 8", {
+	fibonnacci.fibonnacci(8).shouldBe(21);
+}
   
