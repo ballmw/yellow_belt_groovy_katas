@@ -1,0 +1,17 @@
+description "This is how the Tea Party must greet"
+
+before "initialize the Tea Party for each spec", {
+ theTeaParty = new TheTeaParty()
+}
+
+it "should welcome a woman properly", {
+ theTeaParty.welcome("Austen", true, false).shouldBe("Hello Ms. Austen");
+}
+
+it "should welcome a gentleman properly", {
+ theTeaParty.welcome("Orwell", false, false).shouldBe("Hello Mr. Orwell");
+}
+
+it "should welcome a night properly", {
+ theTeaParty.welcome("Newton", false, true).shouldBe("Hello Sir Newton");}
+}
