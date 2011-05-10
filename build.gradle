@@ -2,9 +2,9 @@ apply plugin: 'groovy'
 apply plugin: 'eclipse'
 repositories { mavenCentral() }
 dependencies {
-  groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.8'
+  groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.10'
   testCompile 'org.easyb:easyb:0.9.6'
-  testCompile 'org.codehaus.groovy:groovy-all:1.7.8'
+  testCompile 'org.codehaus.groovy:groovy-all:1.7.10'
 }
 
 
