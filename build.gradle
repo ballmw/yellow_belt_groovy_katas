@@ -1,0 +1,30 @@
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+repositories { mavenCentral() }
+dependencies {
+  groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.8'
+  testCompile 'org.easyb:easyb:0.9.6'
+  testCompile 'org.codehaus.groovy:groovy-all:1.7.8'
+}
+
+
+check << {
+
+    ant.taskdef(name: "easyb", classname:"org.easyb.ant.BehaviorRunnerTask", classpath: sourceSets.test.runtimeClasspath.asPath)
+
+    ant.easyb( classpath: sourceSets.test.runtimeClasspath.asPath, failureProperty:'easyb_failed' ) {
+        report( location:"${project.testResultsDir}/specification.txt", format:"txtspecification" )
+        behaviors( dir: "src/test/specs" ) { include( name:"**/*.specification" ) }
+}
+
+    ant.fail( if:'easyb_failed', message: 'Failures in easyb specifications' )
+	
+	
+	//ant.easyb( classpath: sourceSets.test.runtimeClasspath.asPath, failureProperty:'easyb_failed' ) {
+//		report( location:"${project.testResultsDir}/story.txt", format:"txtstory" )
+//		behaviors( dir: "src/test/stories" ) { include( name:"**/*.story" ) }
+//}
+	//ant.fail( if:'easyb_failed', message: 'Failures in easyb stories' )
+}
+
+
