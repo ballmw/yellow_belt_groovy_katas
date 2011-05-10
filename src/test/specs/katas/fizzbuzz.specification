@@ -1,0 +1,27 @@
+description "This is how a FizzBuzz must work"
+
+before "initialize the FizzBuzz for each spec", {
+ fizzBuzz = new FizzBuzz()
+}
+
+it "should return fizz when given a number divisible by 3", {
+ fizzBuzz.answer(3).shouldBe("fizz");
+ fizzBuzz.answer(6).shouldBe("fizz");
+ fizzBuzz.answer(9).shouldBe("fizz");
+}
+
+it "should return buzz when given a number divisible by 5", {
+ fizzBuzz.answer(5).shouldBe("buzz");
+ fizzBuzz.answer(10).shouldBe("buzz");
+ fizzBuzz.answer(20).shouldBe("buzz");
+}
+
+it "should return fizzbuzz when given a number divisible by 3 and 5", {
+ fizzBuzz.answer(15).shouldBe("fizzbuzz");
+ fizzBuzz.answer(30).shouldBe("fizzbuzz");
+}
+
+it "should return the number if not divisible by 3 or 5", {
+fizzBuzz.answer(4).shouldBe(4);
+fizzBuzz.answer(8).shouldBe(8);
+}
