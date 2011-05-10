@@ -7,8 +7,22 @@ dependencies {
   testCompile 'org.codehaus.groovy:groovy-all:1.7.10'
 }
 
+testResults = new File('build/test-results')
 
-check << {
+task stories(dependsOn: testResults) << {
+	testResults.mkDirs()
+	
+	ant.taskdef(name: "easyb", classname:"org.easyb.ant.BehaviorRunnerTask", classpath: sourceSets.test.runtimeClasspath.asPath)
+	
+	ant.easyb( classpath: sourceSets.test.runtimeClasspath.asPath, failureProperty:'easyb_failed' ) {
+			report( location:"${project.testResultsDir}/story.txt", format:"txtstory" )
+			behaviors( dir: "src/test/stories" ) { include( name:"**/*.story" ) }
+	}
+	ant.fail( if:'easyb_failed', message: 'Failures in easyb stories' )
+	
+	
+}
+task specs(dependsOn: testResults) << {
 
     ant.taskdef(name: "easyb", classname:"org.easyb.ant.BehaviorRunnerTask", classpath: sourceSets.test.runtimeClasspath.asPath)
 
@@ -20,11 +34,6 @@ check << {
     ant.fail( if:'easyb_failed', message: 'Failures in easyb specifications' )
 	
 	
-	//ant.easyb( classpath: sourceSets.test.runtimeClasspath.asPath, failureProperty:'easyb_failed' ) {
-//		report( location:"${project.testResultsDir}/story.txt", format:"txtstory" )
-//		behaviors( dir: "src/test/stories" ) { include( name:"**/*.story" ) }
-//}
-	//ant.fail( if:'easyb_failed', message: 'Failures in easyb stories' )
 }
 
 
