@@ -1,0 +1,26 @@
+description "This is how to calculate a Fibonnacci number"
+
+before "initialize the Fibonnacci for each spec", {
+ fibonnacci = new Fibonnacci()
+}
+
+it "should return 0 for 0", {
+ fibonnacci.fibonnacci(0).shouldBe(0);
+}
+
+it "should return 1 for 1", {
+ fibonnacci.fibonnacci(1).shouldBe(1);
+}
+
+it "should return 1 for 2", {
+ fibonnacci.fibonnacci(2).shouldBe(1);
+}
+
+it "should return 2 for 3", {
+  fibonnacci.fibonnacci(3).shouldBe(2);
+}
+
+it "should return 3 for 4", {
+	fibonnacci.fibonnacci(4).shouldBe(3);
+  }
+  
