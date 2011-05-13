@@ -1,18 +1,18 @@
 description "This is how to Calculate GCD"
 
 before "initialize the CalculateGCD for each spec", {
- calculateGCD = new CalculateGCD()
+ calculateGCD = new CoughSyrupGCD()
 }
 
 it "should return 2 for 2/4", {
- calculateGCD.calcGCD(2,4).shouldBe(2);
+ calculateGCD.calc(2,4).shouldBe(2);
 }
 
 it "should return 5 for 5/20", {
-  calculateGCD.calcGCD(5,20).shouldBe(5);
+  calculateGCD.calc(5,20).shouldBe(5);
 }
 
 it "should return 17 for 34/51", {
-	calculateGCD.calcGCD(34,51).shouldBe(17);
+	calculateGCD.calc(34,51).shouldBe(17);
   }
   

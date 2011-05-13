@@ -1,42 +1,42 @@
-description "This is how to calculate a Fibonnacci number"
+description "This is how to calculate a Fibonacci number"
 
-before "initialize the Fibonnacci for each spec", {
- fibonnacci = new Fibonnacci()
+before "initialize the Fibonacci for each spec", {
+ fibonacci = new Fibonacci()
 }
 
 it "should return 0 for 0", {
- fibonnacci.fibonnacci(0).shouldBe(0);
+ fibonacci.fibonacci(0).shouldBe(0);
 }
 
 it "should return 1 for 1", {
- fibonnacci.fibonnacci(1).shouldBe(1);
+ fibonacci.fibonacci(1).shouldBe(1);
 }
 
 it "should return 1 for 2", {
- fibonnacci.fibonnacci(2).shouldBe(1);
+ fibonacci.fibonacci(2).shouldBe(1);
 }
 
 it "should return 2 for 3", {
-  fibonnacci.fibonnacci(3).shouldBe(2);
+  fibonacci.fibonacci(3).shouldBe(2);
 }
 
 it "should return 3 for 4", {
-	fibonnacci.fibonnacci(4).shouldBe(3);
+	fibonacci.fibonacci(4).shouldBe(3);
 }
 
 it "should return 5 for 5", {
-	fibonnacci.fibonnacci(5).shouldBe(5);
+	fibonacci.fibonacci(5).shouldBe(5);
 }
 
 it "should return 8 for 6", {
-	fibonnacci.fibonnacci(6).shouldBe(8);
+	fibonacci.fibonacci(6).shouldBe(8);
 }
 
 it "should return 13 for 7", {
-	fibonnacci.fibonnacci(7).shouldBe(13);
+	fibonacci.fibonacci(7).shouldBe(13);
 }
 
 it "should return 21 for 8", {
-	fibonnacci.fibonnacci(8).shouldBe(21);
+	fibonacci.fibonacci(8).shouldBe(21);
 }
   

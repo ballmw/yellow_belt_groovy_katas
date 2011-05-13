@@ -1,11 +1,11 @@
 description "This is how to talk backwards"
 
 before "initialize the BackwardsTalk for each spec", {
- backwardsTalk = new backwardsTalk()
+ backwardsTalk = new BackwardsTalk()
 }
 
-it "should return 0 for 0", {
- backwardsTalk.revert("looc").shouldBe("cool");
+it "should return 'cool' for 'looc'", {
+ backwardsTalk.reverse("looc").shouldBe("cool");
 }
 
   

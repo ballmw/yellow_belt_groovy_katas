@@ -1,18 +1,18 @@
 description "This is how to do a NASSA countdown"
 
 before "initialize the NASACountdown for each spec", {
- nasaCountdown = new NASACountdown()
+ nasaCountdown = new NasaCountdown()
 }
 
 it "should return 0 when given a 0", {
- nasaCountdown.countdown(0).shouldBe(new Integer[0]{0});
+ nasaCountdown.countdown(0).shouldBe([0]);
 }
 
 it "should return 1, 0 when given a 1", {
- nasaCountdown.countdown(1).shouldBe(new Integer[0]{1,0});
+ nasaCountdown.countdown(1).shouldBe([1,0]);
  
 }
 
 it "should return 11,10,9,8,7,6,5,4,3,2,1,0 when given 11", {
-nasaCountdown.countdown(11).shouldBe(new Integer[0]{11,10,9,8,7,6,5,4,3,2,1,0});
+nasaCountdown.countdown(11).shouldBe([11,10,9,8,7,6,5,4,3,2,1,0]);
 }
