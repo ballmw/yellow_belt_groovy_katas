@@ -1,8 +1,8 @@
 class BackwardsTalk{
 	
-	def revert(String word)
+	def reverse(String word)
 	{
-		
+		return word.reverse()
 	}
 	
 }
