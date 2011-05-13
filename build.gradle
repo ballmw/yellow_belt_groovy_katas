@@ -22,7 +22,8 @@ task stories(dependsOn: testResults) << {
 	
 	
 }
-task specs(dependsOn: testResults) << {
+
+check << {
 
     ant.taskdef(name: "easyb", classname:"org.easyb.ant.BehaviorRunnerTask", classpath: sourceSets.test.runtimeClasspath.asPath)
 
