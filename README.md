@@ -4,8 +4,6 @@ I was inspired to do this by [Carin Meier](http://www.github.com/gigasquid) who 
 
 I'm a beginner Groovy programmer so learning I set up this project with Gradle, instructions to get things set up are included below:
 
-=======================================
-
 # Setup instructions
 Install Gradle
 
@@ -14,11 +12,10 @@ gradle clean check
 
 optionally add --info or --debug
 
-=======================================
 # Branches
 
 There are two branches, _master_ and _solutions_.  The _solutions_ branch contains the solutions.
-=======================================
+
 # Corrections
 
 Please let me know if you see anything that can be done better, I'll be doing the orange_belt_groovy_katas next an want to do a great job.
