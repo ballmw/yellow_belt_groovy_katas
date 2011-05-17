@@ -5,7 +5,5 @@ class NasaCountdown{
 	// all the way down to zero
 	def countdown(start)
 	{
-		return (start..0).toArray()
-		countdownList.push start
 	}
 }
