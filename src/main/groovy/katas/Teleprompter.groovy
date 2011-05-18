@@ -5,12 +5,5 @@ class Teleprompter{
 	// of the slang word and replacement values
 	def translate(text, dictionary)
 	{
-		
-		for( row in dictionary)
-		{
-			def value = row[0]
-			text = text.replaceAll("\\\$${value}\\\$", row[1])
-		}
-		return text
 	}
 }
